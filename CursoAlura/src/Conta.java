@@ -1,12 +1,48 @@
 public class Conta {
 
-	int agencia;
-	double saldo;
-	int numero;
-	String titular;
-	
-	void deposita(double valor){
+	private int agencia;
+	private double saldo;
+	private int numero;
+	Cliente titular;
+	private static int total =0 ;
+
+	public Conta() {
+		super();
+	}
+
+	public Conta(int agencia, int numero) {
+		Conta.total ++;
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("total :" + this.total);
 		
+	}
+
+	public double deposita(double valor) {
+		return this.saldo += valor;
+	}
+
+	public double pegaSaldo() {
+		return this.saldo;
+	}
+
+	public boolean saca(double valor) {
+		if (this.saldo >= valor) {
+			this.saldo -= valor;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean transfere(double valor, Conta destino) {
+		if (this.saldo >= valor) {
+			this.saldo -= valor;
+			destino.deposita(valor);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public int getAgencia() {
@@ -31,14 +67,6 @@ public class Conta {
 
 	public void setNumero(int numero) {
 		this.numero = numero;
-	}
-
-	public String getTitular() {
-		return titular;
-	}
-
-	public void setTitular(String titular) {
-		this.titular = titular;
 	}
 
 }

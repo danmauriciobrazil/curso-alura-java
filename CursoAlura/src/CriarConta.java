@@ -3,22 +3,22 @@ public class CriarConta {
 
 	public static void main(String[] args) {
 		
-		Conta primeiraConta = new Conta();
-		Conta segundaConta = new Conta();
+	Conta contaDoDanilo = new Conta(123,5656);
+	contaDoDanilo.deposita(100);
+	System.out.println("Saldo disponível : " + contaDoDanilo.pegaSaldo());
 	
-		primeiraConta.saldo +=200;
-		primeiraConta.agencia =1;
-		primeiraConta.numero =1234;
-		primeiraConta.titular = "Danilo";
-		primeiraConta.saldo +=200;
-		System.out.println("Primeira Conta " + primeiraConta.saldo);
-		
-		segundaConta.saldo +=50;
-		segundaConta.agencia =1;
-		segundaConta.numero =1234;
-		segundaConta.titular = "Danilo";
-		segundaConta.saldo +=200;
-		System.out.println("Segunda Conta " + segundaConta.saldo);
-		
+	Conta contaDoLuiz = new Conta(1234,5656);
+	contaDoLuiz.deposita(200);
+	System.out.println("Saldo disponível : " + contaDoLuiz.pegaSaldo());
+	
+	Conta contaDoPaulo = new Conta(123,5656);
+	contaDoPaulo.deposita(400);
+	System.out.println("Saldo disponível : " + contaDoPaulo.pegaSaldo());
+	
+	Funcionarios funcDanilo = new Funcionarios();
+	funcDanilo.setSalário(145.00);
+	funcDanilo.setNome("Danilo");
+	System.out.println("valor do salário de :" + funcDanilo.getNome()+" é :" +funcDanilo.getBonificacao());
 	}
+	
 }
