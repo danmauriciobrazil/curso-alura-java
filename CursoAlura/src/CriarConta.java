@@ -19,6 +19,19 @@ public class CriarConta {
 	funcDanilo.setSalário(145.00);
 	funcDanilo.setNome("Danilo");
 	System.out.println("valor do salário de :" + funcDanilo.getNome()+" é :" +funcDanilo.getBonificacao());
+	
+	Funcionarios funJuca = new Funcionarios();
+	funJuca.setNome("Juca");
+	funJuca.getBonificacao();
+	funJuca.setSalario(5000);
+	System.out.println("Valor da bonificação é:" + funJuca.getBonificacao());
+	
+	Gerente gerente = new Gerente();
+	
+	gerente.setNome("Danilo Mauricio");
+	gerente.autenticaSenha(123);
+	System.out.println("validação de senha: " + gerente.autenticaSenha(123) );
+	
 	}
 	
 }
